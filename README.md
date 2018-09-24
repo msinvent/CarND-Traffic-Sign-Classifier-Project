@@ -22,8 +22,14 @@ The goals / steps of this project are the following:
 ### Load the data set
 ---
 I have used pickle library to read the data from the already preprocessed data given to us. And, initialized three different variables X_train, X_Valid, X_test for training, validation and testing purposes from the three corresponding data files.
+
 ### Explore, summarize and visualize the data set
+---
+Followed by which I have simply looked at the data size of the training and testing data set along with the image size to resructure the deep network accordingly. Each image proved out to be 32x32x3, thus I first resized the images to a gray scale image to attemp to use Lenet architecture initially and to then slowly build from there.
+
 ### Design, train and test a model architecture
+
+
 ### Use the model to make predictions on new images
 ### Analyze the softmax probabilities of the new images
 
