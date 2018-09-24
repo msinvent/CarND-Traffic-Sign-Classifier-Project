@@ -34,14 +34,17 @@ Ref : https://www.mathworks.com/matlabcentral/answers/196535-function-to-convert
 
 Then I trained the network on the Lenet to se the training and validation accurary, which was around 89%, as mentioned in the lecture notes. To gain more accuracy the first thing that I thought of is that in comparison to LeNet now we have much more classes to clasify 43 in comparison to 10, which pointed to the requirement of more parameters. To make sure I am not overtraining over my data set since I was adding bunch of extra parameters I added dropout layers after each layer.
 
-## Layer 1: Convolutional. Input = 32x32x1. Output = 28x28x16
-## Layer 2: Convolutional. Output = 10x10x18
-## Layer 3: Fully Connected Input = 450. Output = 240
-## TODO: Layer 4: Fully Connected. Input = 240. Output = 129
-## TODO: Layer 5: Fully Connected. Input = 129. Output = 43
- 
-### Use the model to make predictions on new images
-### Analyze the softmax probabilities of the new images
+| Layer         		|     Description	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| Input         		| 32x32x3 RGB image   							| 
+| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
+| RELU					|												|
+| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
+| Convolution 3x3	    | etc.      									|
+| Fully connected		| etc.        									|
+| Softmax				| etc.        									|
+|						|												|
+|						|												|
 
 ### Dependencies
 This lab requires:
