@@ -28,8 +28,18 @@ I have used pickle library to read the data from the already preprocessed data g
 Followed by which I have simply looked at the data size of the training and testing data set along with the image size to resructure the deep network accordingly. Each image proved out to be 32x32x3, thus I first resized the images to a gray scale image to attemp to use Lenet architecture initially and to then slowly build from there.
 
 ### Design, train and test a model architecture
+As I mentioned above the first step of data preprocessing was to change the image to gray scale using 
+X = 0.2989*X[:,:,:,0] + 0.5870*X[:,:,:,1] + 0.1140*X[:,:,:,2]
+Ref : https://www.mathworks.com/matlabcentral/answers/196535-function-to-convert-rgb-to-grayscale
 
+Then I trained the network on the Lenet to se the training and validation accurary, which was around 89%, as mentioned in the lecture notes. To gain more accuracy the first thing that I thought of is that in comparison to LeNet now we have much more classes to clasify 43 in comparison to 10, which pointed to the requirement of more parameters. To make sure I am not overtraining over my data set since I was adding bunch of extra parameters I added dropout layers after each layer.
 
+## Layer 1: Convolutional. Input = 32x32x1. Output = 28x28x16
+## Layer 2: Convolutional. Output = 10x10x18
+## Layer 3: Fully Connected Input = 450. Output = 240
+## TODO: Layer 4: Fully Connected. Input = 240. Output = 129
+## TODO: Layer 5: Fully Connected. Input = 129. Output = 43
+ 
 ### Use the model to make predictions on new images
 ### Analyze the softmax probabilities of the new images
 
