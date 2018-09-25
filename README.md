@@ -41,15 +41,25 @@ Then I trained the network on the Lenet to se the training and validation accura
 | RELU					|												|
 | Dropout	      	| Keep Probabiligy = 0.80 				|
 | Max pooling	      	| 2x2 stride,  output 14x14x18 				|
+|     |       |
 | Convolution 3x3	    | 1x1 stride, valid padding, output 10x10x18 	|
 | RELU					|												|
 | Dropout	      	| Keep Probabiligy = 0.80 				|
 | Max pooling	      	| 2x2 stride,  output 5x5x18 				|
+|     |       |
 | Flatten             | output 450x1  |
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
+| Fully connected		| output 240x1 							|
+| RELU					|												|
+| Dropout	      	| Keep Probabiligy = 0.80 				|
+|     |       |
+| Fully connected		| output 129x1 							|
+| RELU					|												|
+| Dropout	      	| Keep Probabiligy = 0.80 				|
+|     |       |
+| Fully connected		| output 43x1 							|
+| RELU					|												|
+| Dropout	      	| Keep Probabiligy = 0.80 				|
+
 
 ### Dependencies
 This lab requires:
