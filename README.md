@@ -37,11 +37,15 @@ Then I trained the network on the Lenet to se the training and validation accura
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x1 Gray Scale image   							| 
-| Convolution 3x3     	| 1x1 stride, valid padding, outputs 28x28x18 	|
+| Convolution 3x3     	| 1x1 stride, valid padding, output 28x28x18 	|
 | RELU					|												|
 | Dropout	      	| Keep Probabiligy = 0.80 				|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
+| Max pooling	      	| 2x2 stride,  output 14x14x18 				|
+| Convolution 3x3	    | 1x1 stride, valid padding, output 10x10x18 	|
+| RELU					|												|
+| Dropout	      	| Keep Probabiligy = 0.80 				|
+| Max pooling	      	| 2x2 stride,  output 5x5x18 				|
+| Flatten             | output 450x1  |
 | Fully connected		| etc.        									|
 | Softmax				| etc.        									|
 |						|												|
