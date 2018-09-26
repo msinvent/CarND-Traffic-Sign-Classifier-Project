@@ -41,7 +41,7 @@ We can see a lot of variation in the frequency of training samples of respective
   210 ]
 ```
 
-where class 0 'Speed limit (20km/h)' with 180 samples, class 1 'Speed limit (30km/h)' with 1980 samples and so on and so forth.
+where class 0 'Speed limit (20km/h)' with 180 samples, class 1 'Speed limit (30km/h)' with 1980 samples and so on and so forth. Though there is significant difference in the frequency I am not going for data augmentation of balancing because of my assumptionn that if the training and test data set is part of a single sample pool. And if the process of selection is random to a good extent then any bias introduced in the network due to biased class sample frequency will not have a significant affect since even the training data will have a similar frequency distribution. ( It is just an assumptions and I might would have come back to it if the accurary requirement after all my other effors would not have would not have given me satisfactorily result )
 
 ### Design, train and test a model architecture
 As I mentioned above the first step of data preprocessing was to change the image to gray scale using 
@@ -50,7 +50,9 @@ X = 0.2989*X[:,:,:,0] + 0.5870*X[:,:,:,1] + 0.1140*X[:,:,:,2]
 ```
 Ref : https://www.mathworks.com/matlabcentral/answers/196535-function-to-convert-rgb-to-grayscale
 
-Then I trained the network on the Lenet to se the training and validation accurary, which was around 89%, as mentioned in the lecture notes. To gain more accuracy the first thing that I thought of is that in comparison to LeNet now we have much more classes to clasify 43 in comparison to 10, which pointed to the requirement of more parameters. To make sure I am not overtraining over my data set since I was adding bunch of extra parameters I added dropout layers after each layer.
+Then I trained the network on the Lenet to se the training and validation accurary, which was around 89%, as mentioned in the lecture notes. To gain more accuracy the first thing that I thought of is that in comparison to LeNet now we have much more classes to clasify 43 in comparison to 10, which pointed to the requirement of more parameters. To make sure I am not overtraining over my data set since I was adding bunch of extra parameters I added dropout layers after each layer. It took me some time to reach the current network configuration with a lot of hit and trial involved.
+A couple of observations that I want to mention is that dropout of 0.50 was not able to even give good accuracy on the training data, that points to number of parameters required to be more.
+
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -88,11 +90,14 @@ The lab environment can be created with CarND Term1 Starter Kit. Click [here](ht
 
 ### Dataset and Repository
 
-1. Download the data set. The classroom has a link to the data set in the "Project Instructions" content. This is a pickled dataset in which we've already resized the images to 32x32. It contains a training, validation and test set.
 2. Clone the project, which contains the Ipython notebook and the writeup template.
 ```sh
 git clone https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project
 cd CarND-Traffic-Sign-Classifier-Project
 jupyter notebook Traffic_Sign_Classifier.ipynb
 ```
+
+### Possible Improvements
+We can definitely get better results if we find a way to augment the dataset with more data. That can be done for some of the signs by simply taking a mirror image(but be careful with the new labels)
+Some other affine or projective transforms can also be applied to create new samples. 
 
