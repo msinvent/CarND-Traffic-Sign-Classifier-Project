@@ -11856,7 +11856,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Replace each question mark with the appropriate value. </span>
@@ -11879,6 +11879,7 @@ div#notebook {
 <span class="n">n_classes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of training examples =&quot;</span><span class="p">,</span> <span class="n">n_train</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of validation examples =&quot;</span><span class="p">,</span> <span class="n">n_validation</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of testing examples =&quot;</span><span class="p">,</span> <span class="n">n_test</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Image data shape =&quot;</span><span class="p">,</span> <span class="n">image_shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of classes =&quot;</span><span class="p">,</span> <span class="n">n_classes</span><span class="p">)</span>
@@ -11901,8 +11902,9 @@ div#notebook {
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Number of training examples = 34799
+Number of validation examples = 4410
 Number of testing examples = 12630
-Image data shape = (32, 32, 1)
+Image data shape = (32, 32, 3)
 Number of classes = 43
 frequency of different classes :  [ 180 1980 2010 1260 1770 1650  360 1290 1260 1320 1800 1170 1890 1920
   690  540  360  990 1080  180  300  270  330  450  240 1350  540  210
@@ -11973,7 +11975,7 @@ frequency of different classes :  [ 180 1980 2010 1260 1770 1650  360 1290 1260 
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>33
+<pre>11
 </pre>
 </div>
 </div>
@@ -11986,7 +11988,7 @@ frequency of different classes :  [ 180 1980 2010 1260 1770 1650  360 1290 1260 
 
 
 <div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
+<img src="data:image/png;base64,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
 "
 >
 </div>
@@ -12310,118 +12312,118 @@ See @{tf.nn.softmax_cross_entropy_with_logits_v2}.
 <pre>Training...
 
 EPOCH 1 ...
-Validation Accuracy = 0.664
+Validation Accuracy = 0.641
 
 EPOCH 2 ...
-Validation Accuracy = 0.804
+Validation Accuracy = 0.801
 
 EPOCH 3 ...
-Validation Accuracy = 0.843
+Validation Accuracy = 0.840
 
 EPOCH 4 ...
-Validation Accuracy = 0.861
+Validation Accuracy = 0.873
 
 EPOCH 5 ...
-Validation Accuracy = 0.880
+Validation Accuracy = 0.886
 
 EPOCH 6 ...
-Validation Accuracy = 0.887
+Validation Accuracy = 0.888
 
 EPOCH 7 ...
 Validation Accuracy = 0.895
 
 EPOCH 8 ...
-Validation Accuracy = 0.894
+Validation Accuracy = 0.897
 
 EPOCH 9 ...
-Validation Accuracy = 0.900
+Validation Accuracy = 0.898
 
 EPOCH 10 ...
-Validation Accuracy = 0.903
+Validation Accuracy = 0.900
 
 EPOCH 11 ...
-Validation Accuracy = 0.907
+Validation Accuracy = 0.919
 
 EPOCH 12 ...
-Validation Accuracy = 0.907
+Validation Accuracy = 0.903
 
 EPOCH 13 ...
-Validation Accuracy = 0.910
-
-EPOCH 14 ...
-Validation Accuracy = 0.909
-
-EPOCH 15 ...
-Validation Accuracy = 0.910
-
-EPOCH 16 ...
 Validation Accuracy = 0.917
 
-EPOCH 17 ...
-Validation Accuracy = 0.920
+EPOCH 14 ...
+Validation Accuracy = 0.918
 
-EPOCH 18 ...
-Validation Accuracy = 0.922
-
-EPOCH 19 ...
-Validation Accuracy = 0.923
-
-EPOCH 20 ...
+EPOCH 15 ...
 Validation Accuracy = 0.921
 
+EPOCH 16 ...
+Validation Accuracy = 0.918
+
+EPOCH 17 ...
+Validation Accuracy = 0.917
+
+EPOCH 18 ...
+Validation Accuracy = 0.919
+
+EPOCH 19 ...
+Validation Accuracy = 0.915
+
+EPOCH 20 ...
+Validation Accuracy = 0.924
+
 EPOCH 21 ...
-Validation Accuracy = 0.922
+Validation Accuracy = 0.914
 
 EPOCH 22 ...
-Validation Accuracy = 0.924
+Validation Accuracy = 0.930
 
 EPOCH 23 ...
-Validation Accuracy = 0.927
+Validation Accuracy = 0.932
 
 EPOCH 24 ...
-Validation Accuracy = 0.935
+Validation Accuracy = 0.929
 
 EPOCH 25 ...
-Validation Accuracy = 0.920
+Validation Accuracy = 0.927
 
 EPOCH 26 ...
-Validation Accuracy = 0.924
+Validation Accuracy = 0.929
 
 EPOCH 27 ...
-Validation Accuracy = 0.937
+Validation Accuracy = 0.930
 
 EPOCH 28 ...
-Validation Accuracy = 0.936
+Validation Accuracy = 0.920
 
 EPOCH 29 ...
-Validation Accuracy = 0.936
+Validation Accuracy = 0.929
 
 EPOCH 30 ...
-Validation Accuracy = 0.935
+Validation Accuracy = 0.928
 
 EPOCH 31 ...
 Validation Accuracy = 0.935
 
 EPOCH 32 ...
-Validation Accuracy = 0.928
+Validation Accuracy = 0.926
 
 EPOCH 33 ...
-Validation Accuracy = 0.935
-
-EPOCH 34 ...
 Validation Accuracy = 0.936
 
+EPOCH 34 ...
+Validation Accuracy = 0.934
+
 EPOCH 35 ...
-Validation Accuracy = 0.937
+Validation Accuracy = 0.933
 
 EPOCH 36 ...
-Validation Accuracy = 0.927
+Validation Accuracy = 0.928
 
 EPOCH 37 ...
-Validation Accuracy = 0.932
+Validation Accuracy = 0.935
 
 EPOCH 38 ...
-Validation Accuracy = 0.939
+Validation Accuracy = 0.928
 
 EPOCH 39 ...
 Validation Accuracy = 0.932
@@ -12430,484 +12432,484 @@ EPOCH 40 ...
 Validation Accuracy = 0.941
 
 EPOCH 41 ...
-Validation Accuracy = 0.928
+Validation Accuracy = 0.924
 
 EPOCH 42 ...
-Validation Accuracy = 0.932
+Validation Accuracy = 0.926
 
 EPOCH 43 ...
-Validation Accuracy = 0.920
+Validation Accuracy = 0.933
 
 EPOCH 44 ...
-Validation Accuracy = 0.944
+Validation Accuracy = 0.932
 
 EPOCH 45 ...
 Validation Accuracy = 0.939
 
 EPOCH 46 ...
-Validation Accuracy = 0.934
+Validation Accuracy = 0.940
 
 EPOCH 47 ...
-Validation Accuracy = 0.936
+Validation Accuracy = 0.943
 
 EPOCH 48 ...
-Validation Accuracy = 0.938
+Validation Accuracy = 0.945
 
 EPOCH 49 ...
-Validation Accuracy = 0.930
+Validation Accuracy = 0.929
 
 EPOCH 50 ...
-Validation Accuracy = 0.937
+Validation Accuracy = 0.939
 
 EPOCH 51 ...
-Validation Accuracy = 0.938
+Validation Accuracy = 0.936
 
 EPOCH 52 ...
-Validation Accuracy = 0.931
+Validation Accuracy = 0.937
 
 EPOCH 53 ...
-Validation Accuracy = 0.934
+Validation Accuracy = 0.941
 
 EPOCH 54 ...
 Validation Accuracy = 0.935
 
 EPOCH 55 ...
-Validation Accuracy = 0.944
-
-EPOCH 56 ...
 Validation Accuracy = 0.933
 
+EPOCH 56 ...
+Validation Accuracy = 0.941
+
 EPOCH 57 ...
-Validation Accuracy = 0.936
+Validation Accuracy = 0.942
 
 EPOCH 58 ...
-Validation Accuracy = 0.937
+Validation Accuracy = 0.941
 
 EPOCH 59 ...
-Validation Accuracy = 0.943
+Validation Accuracy = 0.927
 
 EPOCH 60 ...
-Validation Accuracy = 0.937
+Validation Accuracy = 0.935
 
 EPOCH 61 ...
-Validation Accuracy = 0.942
+Validation Accuracy = 0.935
 
 EPOCH 62 ...
-Validation Accuracy = 0.942
-
-EPOCH 63 ...
-Validation Accuracy = 0.941
-
-EPOCH 64 ...
-Validation Accuracy = 0.946
-
-EPOCH 65 ...
-Validation Accuracy = 0.941
-
-EPOCH 66 ...
-Validation Accuracy = 0.945
-
-EPOCH 67 ...
-Validation Accuracy = 0.946
-
-EPOCH 68 ...
-Validation Accuracy = 0.946
-
-EPOCH 69 ...
-Validation Accuracy = 0.946
-
-EPOCH 70 ...
-Validation Accuracy = 0.932
-
-EPOCH 71 ...
-Validation Accuracy = 0.948
-
-EPOCH 72 ...
 Validation Accuracy = 0.944
 
-EPOCH 73 ...
-Validation Accuracy = 0.945
+EPOCH 63 ...
+Validation Accuracy = 0.939
 
-EPOCH 74 ...
-Validation Accuracy = 0.953
+EPOCH 64 ...
+Validation Accuracy = 0.938
 
-EPOCH 75 ...
+EPOCH 65 ...
+Validation Accuracy = 0.942
+
+EPOCH 66 ...
+Validation Accuracy = 0.935
+
+EPOCH 67 ...
+Validation Accuracy = 0.942
+
+EPOCH 68 ...
 Validation Accuracy = 0.943
 
-EPOCH 76 ...
+EPOCH 69 ...
+Validation Accuracy = 0.932
+
+EPOCH 70 ...
+Validation Accuracy = 0.941
+
+EPOCH 71 ...
 Validation Accuracy = 0.936
 
-EPOCH 77 ...
-Validation Accuracy = 0.953
+EPOCH 72 ...
+Validation Accuracy = 0.949
 
-EPOCH 78 ...
+EPOCH 73 ...
+Validation Accuracy = 0.943
+
+EPOCH 74 ...
+Validation Accuracy = 0.936
+
+EPOCH 75 ...
+Validation Accuracy = 0.941
+
+EPOCH 76 ...
 Validation Accuracy = 0.948
 
-EPOCH 79 ...
-Validation Accuracy = 0.946
-
-EPOCH 80 ...
+EPOCH 77 ...
 Validation Accuracy = 0.950
 
+EPOCH 78 ...
+Validation Accuracy = 0.940
+
+EPOCH 79 ...
+Validation Accuracy = 0.942
+
+EPOCH 80 ...
+Validation Accuracy = 0.945
+
 EPOCH 81 ...
-Validation Accuracy = 0.951
+Validation Accuracy = 0.945
 
 EPOCH 82 ...
-Validation Accuracy = 0.945
+Validation Accuracy = 0.946
 
 EPOCH 83 ...
 Validation Accuracy = 0.941
 
 EPOCH 84 ...
-Validation Accuracy = 0.950
+Validation Accuracy = 0.944
 
 EPOCH 85 ...
-Validation Accuracy = 0.950
+Validation Accuracy = 0.939
 
 EPOCH 86 ...
-Validation Accuracy = 0.939
+Validation Accuracy = 0.940
 
 EPOCH 87 ...
-Validation Accuracy = 0.942
-
-EPOCH 88 ...
 Validation Accuracy = 0.945
 
-EPOCH 89 ...
-Validation Accuracy = 0.950
-
-EPOCH 90 ...
-Validation Accuracy = 0.949
-
-EPOCH 91 ...
-Validation Accuracy = 0.946
-
-EPOCH 92 ...
-Validation Accuracy = 0.950
-
-EPOCH 93 ...
-Validation Accuracy = 0.957
-
-EPOCH 94 ...
+EPOCH 88 ...
 Validation Accuracy = 0.939
 
-EPOCH 95 ...
-Validation Accuracy = 0.944
+EPOCH 89 ...
+Validation Accuracy = 0.930
 
-EPOCH 96 ...
-Validation Accuracy = 0.943
+EPOCH 90 ...
+Validation Accuracy = 0.942
 
-EPOCH 97 ...
-Validation Accuracy = 0.944
+EPOCH 91 ...
+Validation Accuracy = 0.933
 
-EPOCH 98 ...
-Validation Accuracy = 0.949
-
-EPOCH 99 ...
+EPOCH 92 ...
 Validation Accuracy = 0.938
 
-EPOCH 100 ...
-Validation Accuracy = 0.941
+EPOCH 93 ...
+Validation Accuracy = 0.945
 
-EPOCH 101 ...
-Validation Accuracy = 0.947
+EPOCH 94 ...
+Validation Accuracy = 0.934
 
-EPOCH 102 ...
-Validation Accuracy = 0.948
+EPOCH 95 ...
+Validation Accuracy = 0.943
 
-EPOCH 103 ...
+EPOCH 96 ...
 Validation Accuracy = 0.944
 
+EPOCH 97 ...
+Validation Accuracy = 0.937
+
+EPOCH 98 ...
+Validation Accuracy = 0.937
+
+EPOCH 99 ...
+Validation Accuracy = 0.943
+
+EPOCH 100 ...
+Validation Accuracy = 0.939
+
+EPOCH 101 ...
+Validation Accuracy = 0.941
+
+EPOCH 102 ...
+Validation Accuracy = 0.934
+
+EPOCH 103 ...
+Validation Accuracy = 0.948
+
 EPOCH 104 ...
-Validation Accuracy = 0.951
+Validation Accuracy = 0.949
 
 EPOCH 105 ...
 Validation Accuracy = 0.949
 
 EPOCH 106 ...
-Validation Accuracy = 0.937
-
-EPOCH 107 ...
-Validation Accuracy = 0.950
-
-EPOCH 108 ...
 Validation Accuracy = 0.947
 
-EPOCH 109 ...
-Validation Accuracy = 0.950
-
-EPOCH 110 ...
-Validation Accuracy = 0.950
-
-EPOCH 111 ...
-Validation Accuracy = 0.946
-
-EPOCH 112 ...
-Validation Accuracy = 0.952
-
-EPOCH 113 ...
+EPOCH 107 ...
 Validation Accuracy = 0.941
 
-EPOCH 114 ...
+EPOCH 108 ...
+Validation Accuracy = 0.943
+
+EPOCH 109 ...
+Validation Accuracy = 0.942
+
+EPOCH 110 ...
 Validation Accuracy = 0.949
 
+EPOCH 111 ...
+Validation Accuracy = 0.940
+
+EPOCH 112 ...
+Validation Accuracy = 0.943
+
+EPOCH 113 ...
+Validation Accuracy = 0.949
+
+EPOCH 114 ...
+Validation Accuracy = 0.946
+
 EPOCH 115 ...
-Validation Accuracy = 0.939
+Validation Accuracy = 0.941
 
 EPOCH 116 ...
-Validation Accuracy = 0.948
+Validation Accuracy = 0.953
 
 EPOCH 117 ...
 Validation Accuracy = 0.944
 
 EPOCH 118 ...
-Validation Accuracy = 0.942
+Validation Accuracy = 0.943
 
 EPOCH 119 ...
-Validation Accuracy = 0.954
+Validation Accuracy = 0.936
 
 EPOCH 120 ...
-Validation Accuracy = 0.941
-
-EPOCH 121 ...
-Validation Accuracy = 0.949
-
-EPOCH 122 ...
-Validation Accuracy = 0.946
-
-EPOCH 123 ...
-Validation Accuracy = 0.941
-
-EPOCH 124 ...
-Validation Accuracy = 0.949
-
-EPOCH 125 ...
 Validation Accuracy = 0.950
 
+EPOCH 121 ...
+Validation Accuracy = 0.943
+
+EPOCH 122 ...
+Validation Accuracy = 0.939
+
+EPOCH 123 ...
+Validation Accuracy = 0.947
+
+EPOCH 124 ...
+Validation Accuracy = 0.931
+
+EPOCH 125 ...
+Validation Accuracy = 0.936
+
 EPOCH 126 ...
-Validation Accuracy = 0.945
+Validation Accuracy = 0.943
 
 EPOCH 127 ...
-Validation Accuracy = 0.944
+Validation Accuracy = 0.937
 
 EPOCH 128 ...
-Validation Accuracy = 0.943
+Validation Accuracy = 0.937
 
 EPOCH 129 ...
-Validation Accuracy = 0.945
+Validation Accuracy = 0.946
 
 EPOCH 130 ...
-Validation Accuracy = 0.953
+Validation Accuracy = 0.941
 
 EPOCH 131 ...
-Validation Accuracy = 0.949
+Validation Accuracy = 0.931
 
 EPOCH 132 ...
-Validation Accuracy = 0.948
+Validation Accuracy = 0.936
 
 EPOCH 133 ...
-Validation Accuracy = 0.940
+Validation Accuracy = 0.942
 
 EPOCH 134 ...
-Validation Accuracy = 0.944
+Validation Accuracy = 0.942
 
 EPOCH 135 ...
-Validation Accuracy = 0.953
+Validation Accuracy = 0.946
 
 EPOCH 136 ...
-Validation Accuracy = 0.949
+Validation Accuracy = 0.943
 
 EPOCH 137 ...
-Validation Accuracy = 0.949
+Validation Accuracy = 0.942
 
 EPOCH 138 ...
-Validation Accuracy = 0.947
+Validation Accuracy = 0.938
 
 EPOCH 139 ...
-Validation Accuracy = 0.943
+Validation Accuracy = 0.949
 
 EPOCH 140 ...
-Validation Accuracy = 0.943
+Validation Accuracy = 0.945
 
 EPOCH 141 ...
-Validation Accuracy = 0.947
+Validation Accuracy = 0.946
 
 EPOCH 142 ...
-Validation Accuracy = 0.940
-
-EPOCH 143 ...
-Validation Accuracy = 0.944
-
-EPOCH 144 ...
 Validation Accuracy = 0.943
 
-EPOCH 145 ...
+EPOCH 143 ...
+Validation Accuracy = 0.942
+
+EPOCH 144 ...
 Validation Accuracy = 0.947
+
+EPOCH 145 ...
+Validation Accuracy = 0.932
 
 EPOCH 146 ...
 Validation Accuracy = 0.949
 
 EPOCH 147 ...
-Validation Accuracy = 0.944
+Validation Accuracy = 0.947
 
 EPOCH 148 ...
-Validation Accuracy = 0.939
+Validation Accuracy = 0.949
 
 EPOCH 149 ...
-Validation Accuracy = 0.941
+Validation Accuracy = 0.947
 
 EPOCH 150 ...
 Validation Accuracy = 0.945
 
 EPOCH 151 ...
-Validation Accuracy = 0.951
+Validation Accuracy = 0.937
 
 EPOCH 152 ...
-Validation Accuracy = 0.936
-
-EPOCH 153 ...
-Validation Accuracy = 0.944
-
-EPOCH 154 ...
-Validation Accuracy = 0.942
-
-EPOCH 155 ...
-Validation Accuracy = 0.944
-
-EPOCH 156 ...
-Validation Accuracy = 0.959
-
-EPOCH 157 ...
-Validation Accuracy = 0.939
-
-EPOCH 158 ...
-Validation Accuracy = 0.954
-
-EPOCH 159 ...
-Validation Accuracy = 0.939
-
-EPOCH 160 ...
-Validation Accuracy = 0.939
-
-EPOCH 161 ...
-Validation Accuracy = 0.934
-
-EPOCH 162 ...
-Validation Accuracy = 0.945
-
-EPOCH 163 ...
-Validation Accuracy = 0.943
-
-EPOCH 164 ...
-Validation Accuracy = 0.941
-
-EPOCH 165 ...
-Validation Accuracy = 0.950
-
-EPOCH 166 ...
-Validation Accuracy = 0.950
-
-EPOCH 167 ...
-Validation Accuracy = 0.945
-
-EPOCH 168 ...
-Validation Accuracy = 0.949
-
-EPOCH 169 ...
 Validation Accuracy = 0.947
 
-EPOCH 170 ...
+EPOCH 153 ...
+Validation Accuracy = 0.952
+
+EPOCH 154 ...
+Validation Accuracy = 0.944
+
+EPOCH 155 ...
+Validation Accuracy = 0.940
+
+EPOCH 156 ...
+Validation Accuracy = 0.944
+
+EPOCH 157 ...
 Validation Accuracy = 0.945
 
-EPOCH 171 ...
-Validation Accuracy = 0.951
-
-EPOCH 172 ...
-Validation Accuracy = 0.950
-
-EPOCH 173 ...
+EPOCH 158 ...
 Validation Accuracy = 0.946
 
-EPOCH 174 ...
+EPOCH 159 ...
+Validation Accuracy = 0.942
+
+EPOCH 160 ...
+Validation Accuracy = 0.943
+
+EPOCH 161 ...
+Validation Accuracy = 0.942
+
+EPOCH 162 ...
+Validation Accuracy = 0.939
+
+EPOCH 163 ...
 Validation Accuracy = 0.948
+
+EPOCH 164 ...
+Validation Accuracy = 0.948
+
+EPOCH 165 ...
+Validation Accuracy = 0.945
+
+EPOCH 166 ...
+Validation Accuracy = 0.946
+
+EPOCH 167 ...
+Validation Accuracy = 0.943
+
+EPOCH 168 ...
+Validation Accuracy = 0.943
+
+EPOCH 169 ...
+Validation Accuracy = 0.942
+
+EPOCH 170 ...
+Validation Accuracy = 0.946
+
+EPOCH 171 ...
+Validation Accuracy = 0.945
+
+EPOCH 172 ...
+Validation Accuracy = 0.946
+
+EPOCH 173 ...
+Validation Accuracy = 0.956
+
+EPOCH 174 ...
+Validation Accuracy = 0.936
 
 EPOCH 175 ...
 Validation Accuracy = 0.949
 
 EPOCH 176 ...
-Validation Accuracy = 0.951
+Validation Accuracy = 0.941
 
 EPOCH 177 ...
-Validation Accuracy = 0.949
-
-EPOCH 178 ...
-Validation Accuracy = 0.946
-
-EPOCH 179 ...
-Validation Accuracy = 0.953
-
-EPOCH 180 ...
-Validation Accuracy = 0.947
-
-EPOCH 181 ...
 Validation Accuracy = 0.948
 
-EPOCH 182 ...
-Validation Accuracy = 0.938
-
-EPOCH 183 ...
-Validation Accuracy = 0.951
-
-EPOCH 184 ...
-Validation Accuracy = 0.949
-
-EPOCH 185 ...
-Validation Accuracy = 0.949
-
-EPOCH 186 ...
-Validation Accuracy = 0.941
-
-EPOCH 187 ...
-Validation Accuracy = 0.933
-
-EPOCH 188 ...
-Validation Accuracy = 0.941
-
-EPOCH 189 ...
-Validation Accuracy = 0.946
-
-EPOCH 190 ...
+EPOCH 178 ...
 Validation Accuracy = 0.944
 
+EPOCH 179 ...
+Validation Accuracy = 0.937
+
+EPOCH 180 ...
+Validation Accuracy = 0.939
+
+EPOCH 181 ...
+Validation Accuracy = 0.951
+
+EPOCH 182 ...
+Validation Accuracy = 0.941
+
+EPOCH 183 ...
+Validation Accuracy = 0.948
+
+EPOCH 184 ...
+Validation Accuracy = 0.942
+
+EPOCH 185 ...
+Validation Accuracy = 0.947
+
+EPOCH 186 ...
+Validation Accuracy = 0.956
+
+EPOCH 187 ...
+Validation Accuracy = 0.937
+
+EPOCH 188 ...
+Validation Accuracy = 0.949
+
+EPOCH 189 ...
+Validation Accuracy = 0.942
+
+EPOCH 190 ...
+Validation Accuracy = 0.948
+
 EPOCH 191 ...
-Validation Accuracy = 0.946
+Validation Accuracy = 0.944
 
 EPOCH 192 ...
 Validation Accuracy = 0.943
 
 EPOCH 193 ...
-Validation Accuracy = 0.953
+Validation Accuracy = 0.938
 
 EPOCH 194 ...
-Validation Accuracy = 0.944
+Validation Accuracy = 0.943
 
 EPOCH 195 ...
-Validation Accuracy = 0.947
+Validation Accuracy = 0.948
 
 EPOCH 196 ...
-Validation Accuracy = 0.947
+Validation Accuracy = 0.951
 
 EPOCH 197 ...
-Validation Accuracy = 0.946
+Validation Accuracy = 0.953
 
 EPOCH 198 ...
-Validation Accuracy = 0.944
+Validation Accuracy = 0.946
 
 EPOCH 199 ...
-Validation Accuracy = 0.949
+Validation Accuracy = 0.945
 
 EPOCH 200 ...
-Validation Accuracy = 0.947
+Validation Accuracy = 0.958
 
 Model saved
 </pre>
@@ -12967,7 +12969,7 @@ Model saved
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>INFO:tensorflow:Restoring parameters from lenet
-Test Accuracy = 0.937
+Test Accuracy = 0.942
 </pre>
 </div>
 </div>
@@ -13109,7 +13111,7 @@ Test Accuracy = 0.937
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.image.AxesImage at 0x7fe4eb710b70&gt;</pre>
+<pre>&lt;matplotlib.image.AxesImage at 0x7f8fd44a6b70&gt;</pre>
 </div>
 
 </div>
@@ -13265,70 +13267,70 @@ Test Accuracy = 0.937
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>INFO:tensorflow:Restoring parameters from lenet
-( straightOnly )topRecommendations are : [[35 36 13 12 28]]
-35              Ahead only
-36    Go straight or right
-13                   Yield
-12           Priority road
-28       Children crossing
+( straightOnly )topRecommendations are : [[35 12 25 11 29]]
+35                               Ahead only
+12                            Priority road
+25                                Road work
+11    Right-of-way at the next intersection
+29                        Bicycles crossing
 Name: SignName, dtype: object
 
-Normalized logits value for corresponding top 5 :  [0.05976466 0.04850165 0.04461154 0.04103747 0.03953082] 
+Normalized logits value for corresponding top 5 :  [0.0591794  0.04613094 0.03975571 0.03824174 0.03814147] 
 
 
-( yield )topRecommendations are : [[13 28  1 38 12]]
-13                   Yield
-28       Children crossing
-1     Speed limit (30km/h)
-38              Keep right
-12           Priority road
-Name: SignName, dtype: object
-
-Normalized logits value for corresponding top 5 :  [0.04731421 0.03264859 0.03144821 0.03107632 0.02990381] 
-
-
-( noentry )topRecommendations are : [[13 35 28  5 42]]
-13                                                Yield
-35                                           Ahead only
-28                                    Children crossing
-5                                  Speed limit (80km/h)
-42    End of no passing by vehicles over 3.5 metric ...
-Name: SignName, dtype: object
-
-Normalized logits value for corresponding top 5 :  [0.05197895 0.0492413  0.03966396 0.03592663 0.03469862] 
-
-
-( stop )topRecommendations are : [[38  1  3  2 13]]
-38              Keep right
-1     Speed limit (30km/h)
-3     Speed limit (60km/h)
-2     Speed limit (50km/h)
-13                   Yield
-Name: SignName, dtype: object
-
-Normalized logits value for corresponding top 5 :  [0.04900478 0.03699198 0.03692804 0.03661263 0.03539449] 
-
-
-( 50SpeedLimit )topRecommendations are : [[ 2  1 12  3  5]]
+( 50SpeedLimit )topRecommendations are : [[2 1 5 7 4]]
 2     Speed limit (50km/h)
 1     Speed limit (30km/h)
-12           Priority road
-3     Speed limit (60km/h)
 5     Speed limit (80km/h)
+7    Speed limit (100km/h)
+4     Speed limit (70km/h)
 Name: SignName, dtype: object
 
-Normalized logits value for corresponding top 5 :  [0.0559497  0.04465398 0.03819703 0.03699295 0.03642924] 
+Normalized logits value for corresponding top 5 :  [0.04702024 0.04189982 0.03850788 0.03845864 0.03388858] 
 
 
-( workOnRoad )topRecommendations are : [[25 19 23 29 35]]
-25                      Road work
-19    Dangerous curve to the left
-23                  Slippery road
-29              Bicycles crossing
-35                     Ahead only
+( stop )topRecommendations are : [[38 14  1 40  0]]
+38              Keep right
+14                    Stop
+1     Speed limit (30km/h)
+40    Roundabout mandatory
+0     Speed limit (20km/h)
 Name: SignName, dtype: object
 
-Normalized logits value for corresponding top 5 :  [0.05476741 0.04292673 0.04279797 0.03788178 0.03713897] 
+Normalized logits value for corresponding top 5 :  [0.04926004 0.04863741 0.04517299 0.0447007  0.04247903] 
+
+
+( workOnRoad )topRecommendations are : [[25 33 26 13 24]]
+25                    Road work
+33             Turn right ahead
+26              Traffic signals
+13                        Yield
+24    Road narrows on the right
+Name: SignName, dtype: object
+
+Normalized logits value for corresponding top 5 :  [0.04456436 0.03528895 0.03232626 0.03165494 0.03068688] 
+
+
+( noentry )topRecommendations are : [[13  9 41 17 35]]
+13                Yield
+9            No passing
+41    End of no passing
+17             No entry
+35           Ahead only
+Name: SignName, dtype: object
+
+Normalized logits value for corresponding top 5 :  [0.04718988 0.03929084 0.03818461 0.03713952 0.03501143] 
+
+
+( yield )topRecommendations are : [[13 28 25  5 11]]
+13                                    Yield
+28                        Children crossing
+25                                Road work
+5                      Speed limit (80km/h)
+11    Right-of-way at the next intersection
+Name: SignName, dtype: object
+
+Normalized logits value for corresponding top 5 :  [0.05304193 0.0388319  0.03611704 0.03516356 0.03251119] 
 
 
 </pre>
@@ -13491,8 +13493,24 @@ Class Name :  Speed limit (50km/h), softMax Probability :  0.0
 Class Name :  Speed limit (60km/h), softMax Probability :  0.0
 
 
-For the class  yield  the top classes with corresponding softmax probabilities 
-Class Name :  Yield, softMax Probability :  1.0
+For the class  50SpeedLimit  the top classes with corresponding softmax probabilities 
+Class Name :  Speed limit (50km/h), softMax Probability :  1.0
+Class Name :  Speed limit (20km/h), softMax Probability :  0.0
+Class Name :  Speed limit (30km/h), softMax Probability :  0.0
+Class Name :  Speed limit (60km/h), softMax Probability :  0.0
+Class Name :  Speed limit (70km/h), softMax Probability :  0.0
+
+
+For the class  stop  the top classes with corresponding softmax probabilities 
+Class Name :  Stop, softMax Probability :  0.97882426
+Class Name :  Speed limit (30km/h), softMax Probability :  0.021175735
+Class Name :  Keep right, softMax Probability :  1.8713125e-10
+Class Name :  Speed limit (20km/h), softMax Probability :  0.0
+Class Name :  Speed limit (50km/h), softMax Probability :  0.0
+
+
+For the class  workOnRoad  the top classes with corresponding softmax probabilities 
+Class Name :  Road work, softMax Probability :  1.0
 Class Name :  Speed limit (20km/h), softMax Probability :  0.0
 Class Name :  Speed limit (30km/h), softMax Probability :  0.0
 Class Name :  Speed limit (50km/h), softMax Probability :  0.0
@@ -13507,24 +13525,8 @@ Class Name :  Speed limit (50km/h), softMax Probability :  0.0
 Class Name :  Speed limit (60km/h), softMax Probability :  0.0
 
 
-For the class  stop  the top classes with corresponding softmax probabilities 
-Class Name :  Keep right, softMax Probability :  1.0
-Class Name :  Speed limit (20km/h), softMax Probability :  0.0
-Class Name :  Speed limit (30km/h), softMax Probability :  0.0
-Class Name :  Speed limit (50km/h), softMax Probability :  0.0
-Class Name :  Speed limit (60km/h), softMax Probability :  0.0
-
-
-For the class  50SpeedLimit  the top classes with corresponding softmax probabilities 
-Class Name :  Speed limit (50km/h), softMax Probability :  1.0
-Class Name :  Speed limit (20km/h), softMax Probability :  0.0
-Class Name :  Speed limit (30km/h), softMax Probability :  0.0
-Class Name :  Speed limit (60km/h), softMax Probability :  0.0
-Class Name :  Speed limit (70km/h), softMax Probability :  0.0
-
-
-For the class  workOnRoad  the top classes with corresponding softmax probabilities 
-Class Name :  Road work, softMax Probability :  1.0
+For the class  yield  the top classes with corresponding softmax probabilities 
+Class Name :  Yield, softMax Probability :  1.0
 Class Name :  Speed limit (20km/h), softMax Probability :  0.0
 Class Name :  Speed limit (30km/h), softMax Probability :  0.0
 Class Name :  Speed limit (50km/h), softMax Probability :  0.0
