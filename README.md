@@ -12,8 +12,6 @@
 
 Project Overview
 ---
-<!--- ![alt text][image1] --->
-
 In this project, you will use what you've learned about deep neural networks and convolutional neural networks to classify traffic signs. You will train and validate a model so it can classify traffic sign images using the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset). After the model is trained, you will then try out your model on images of German traffic signs that you find on the web.
 
 We have included an Ipython notebook that contains further instructions 
@@ -89,14 +87,45 @@ The exact network graph is :
 | RELU					|												|
 | Dropout	      	| Keep Probabiligy = 0.80 				|
 
-Accuracy on validation dataset comes out to be around 94-95%.
+Accuracy on validation dataset around 93 - 96%
+Accuracy on trainig dataset around 94%
+Accuracy on internet scrapped images : 4/6
 
-### Dependencies
-This lab requires:
+### Use the model to make predictions on new images
+I scraped the internet to find the images with google image search using the keyword 'german traffic signs' it turns out this was a task in itself since most of these searches were taking me to the same dataset. I tried my best to make sure that the images I am getting are not part of the training or validation set.
 
-* [CarND Term1 Starter Kit](https://github.com/udacity/CarND-Term1-Starter-Kit)
+Just to give an idea about how varied these images are I am plotting them in their original proportion
+![alt text][image1]
+![alt text][image2]
+![alt text][image3]
+![alt text][image4]
+![alt text][image5]
+![alt text][image6]
 
-The lab environment can be created with CarND Term1 Starter Kit. Click [here](https://github.com/udacity/CarND-Term1-Starter-Kit/blob/master/README.md) for the details.
+My second task was to reshape the images to use in my trained network. I tried using 
+```
+image = cv2.resize(image, (32, 32)) 
+```
+On the image after transforming it the grayscale but got bad results in terms of prediction, probably because of very different form factors, thus I choose to manually crop the images to square shape by careful selection of cropping area. I believe this will not be a part of a deep neural network design of training cycle as in that case I will suppose most of my data set is coming from a very similar camera sources.
+
+After mamnual data shaping I fed the images inside the trained neural network to get 4 out of 6 images predicted correctly. The predicted classes are
+
+For the class  straightOnly  the top classes with corresponding softmax probabilities 
+
+
+| Class Name         		|     softMax Probability	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| Ahead only |   1.0  |
+| Speed limit (20km/h) |   0.0  |
+| Speed limit (20km/h) |   0.0  |
+| Speed limit (50km/h) |   0.0  |
+| Speed limit (60km/h) |   0.0  |
+
+Class Name :  Speed limit (20km/h), softMax Probability :  0.0
+Class Name :  Speed limit (30km/h), softMax Probability :  0.0
+Class Name :  Speed limit (50km/h), softMax Probability :  0.0
+Class Name :  Speed limit (60km/h), softMax Probability :  0.0
+
 
 ### Dataset and Repository
 
