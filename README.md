@@ -1,20 +1,25 @@
 ## Project: Build a Traffic Sign Recognition Program
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
+[//]: # (Image References)
+
+[image1]: ./germanTrafficSign/50SpeedLimit.jpg "SpeedLimit of 50"
+[image2]: ./germanTrafficSign/noentry.jpg "No entry"
+[image3]: ./germanTrafficSign/stop.jpg "Stop"
+[image4]: ./germanTrafficSign/straightOnly.jpg "Ahead Only"
+[image5]: ./germanTrafficSign/workOnRoad.jpg "Road Work"
+[image6]: ./germanTrafficSign/yield.jpg "Yield"
+
 Project Overview
 ---
+<!--- ![alt text][image1] --->
+
 In this project, you will use what you've learned about deep neural networks and convolutional neural networks to classify traffic signs. You will train and validate a model so it can classify traffic sign images using the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset). After the model is trained, you will then try out your model on images of German traffic signs that you find on the web.
 
 We have included an Ipython notebook that contains further instructions 
 and starter code. Be sure to download the [Ipython notebook](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb). 
 
 We also want you to create a detailed writeup of the project. Check out the [writeup template](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/writeup_template.md) for this project and use it as a starting point for creating your own writeup. The writeup can be either a markdown file or a pdf document.
-
-### Minimal Project Requirement : 
----
-* the Ipython notebook with the code
-* the code exported as an html file
-* a writeup report either as a markdown or pdf file 
 
 ## The Project
 ---
@@ -29,7 +34,9 @@ Followed by which I have simply looked at the data size of the training and test
 
 ### Design, train and test a model architecture
 As I mentioned above the first step of data preprocessing was to change the image to gray scale using 
+```
 X = 0.2989*X[:,:,:,0] + 0.5870*X[:,:,:,1] + 0.1140*X[:,:,:,2]
+```
 Ref : https://www.mathworks.com/matlabcentral/answers/196535-function-to-convert-rgb-to-grayscale
 
 Then I trained the network on the Lenet to se the training and validation accurary, which was around 89%, as mentioned in the lecture notes. To gain more accuracy the first thing that I thought of is that in comparison to LeNet now we have much more classes to clasify 43 in comparison to 10, which pointed to the requirement of more parameters. To make sure I am not overtraining over my data set since I was adding bunch of extra parameters I added dropout layers after each layer.
