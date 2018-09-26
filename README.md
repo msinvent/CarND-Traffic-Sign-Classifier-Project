@@ -43,6 +43,13 @@ We can see a lot of variation in the frequency of training samples of respective
 
 where class 0 'Speed limit (20km/h)' with 180 samples, class 1 'Speed limit (30km/h)' with 1980 samples and so on and so forth. Though there is significant difference in the frequency I am not going for data augmentation of balancing because of my assumptionn that if the training and test data set is part of a single sample pool. And if the process of selection is random to a good extent then any bias introduced in the network due to biased class sample frequency will not have a significant affect since even the training data will have a similar frequency distribution. ( It is just an assumptions and I might would have come back to it if the accurary requirement after all my other effors would not have would not have given me satisfactorily result )
 
+
+* The size of training set is 34799
+* The size of the validation set is 4410
+* The size of test set is 12630
+* The shape of a traffic sign image is (32,32,3)
+* The number of unique classes/labels in the data set is 43
+
 ### Design, train and test a model architecture
 As I mentioned above the first step of data preprocessing was to change the image to gray scale using 
 ```
@@ -52,6 +59,8 @@ Ref : https://www.mathworks.com/matlabcentral/answers/196535-function-to-convert
 
 Then I trained the network on the Lenet to se the training and validation accurary, which was around 89%, as mentioned in the lecture notes. To gain more accuracy the first thing that I thought of is that in comparison to LeNet now we have much more classes to clasify 43 in comparison to 10, which pointed to the requirement of more parameters. To make sure I am not overtraining over my data set since I was adding bunch of extra parameters I added dropout layers after each layer. It took me some time to reach the current network configuration with a lot of hit and trial involved.
 A couple of observations that I want to mention is that dropout of 0.50 was not able to even give good accuracy on the training data, that points to number of parameters required to be more.
+
+The exact network graph is :
 
 
 | Layer         		|     Description	        					| 
@@ -80,6 +89,7 @@ A couple of observations that I want to mention is that dropout of 0.50 was not 
 | RELU					|												|
 | Dropout	      	| Keep Probabiligy = 0.80 				|
 
+Accuracy on validation dataset comes out to be around 94-95%.
 
 ### Dependencies
 This lab requires:
