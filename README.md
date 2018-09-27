@@ -87,9 +87,9 @@ The exact network graph is :
 | RELU					|												|
 | Dropout	      	| Keep Probabiligy = 0.80 				|
 
-Accuracy on validation dataset around 93 - 96%
-Accuracy on trainig dataset around 94%
-Accuracy on internet scrapped images : 4/6
+* Accuracy on validation dataset around 93 - 96%
+* Accuracy on trainig dataset around 94%
+* Accuracy on internet scrapped images : 4/6
 
 ### Use the model to make predictions on new images
 I scraped the internet to find the images with google image search using the keyword 'german traffic signs' it turns out this was a task in itself since most of these searches were taking me to the same dataset. I tried my best to make sure that the images I am getting are not part of the training or validation set.
