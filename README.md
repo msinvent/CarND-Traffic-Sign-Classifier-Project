@@ -87,9 +87,9 @@ The exact network graph is :
 | RELU					|												|
 | Dropout	      	| Keep Probabiligy = 0.80 				|
 
-Accuracy on validation dataset around 93 - 96%
-Accuracy on trainig dataset around 94%
-Accuracy on internet scrapped images : 4/6
+* Accuracy on validation dataset around 93 - 96%
+* Accuracy on trainig dataset around 94%
+* Accuracy on internet scrapped images : 4/6
 
 ### Use the model to make predictions on new images
 I scraped the internet to find the images with google image search using the keyword 'german traffic signs' it turns out this was a task in itself since most of these searches were taking me to the same dataset. I tried my best to make sure that the images I am getting are not part of the training or validation set.
@@ -113,74 +113,66 @@ After mamnual data shaping I fed the images inside the trained neural network to
 For the class  *straightOnly*  the top classes with corresponding softmax probabilities 
 
 
-| Class Name         		|     softMax Probability	        					|   logit value  |
-|:---------------------:|:---------------------------------------------:|:--------|
-| Ahead only |   1.0  |  0.06681505 |
-| Yield |   0.0  | 0.04762857 |
-| Go straight or right |   0.0  | 0.04726604 |
-| Turn right ahead |   0.0  | 0.04079577 |
-| Priority road |   0.0  | 0.03750502 |
+| Class Name         		|     softMax Probability	        					| 
+|:---------------------:|:---------------------------------------------:|
+| Ahead only |   1.0  | 
+| Yield |   0.0  | 
+| Road work |   0.0  |
+| Turn left ahead |   0.0  | 
+| Priority road |   0.0  | 
 
 
 For class *stop*
 
-| Class Name         		|     softMax Probability	        					|   logit value  |
-|:---------------------:|:---------------------------------------------:|:--------|
-| Keep right |   1.0  |  0.04347756 |
-| Speed limit (30km/h) |   0.0  | 0.04167535 |
-| Road work |   0.0  | 0.04124022 |
-| Speed limit (80km/h) |   0.0  | 0.03936648 |
-| Speed limit (50km/h) |   0.0  | 0.03915376 |
+| Class Name         		|     softMax Probability	        					|
+|:---------------------:|:---------------------------------------------:|
+| Stop |   0.9999999 |
+| No entry (30km/h) |   1.2223127e-07  |
+| Priority road |   2.0519483e-08  |
+| Turn left ahead |   7.811599e-09  |
+| Keep right |  6.4011046e-10  |
 
 
 For class *yield*
 
-| Class Name         		|     softMax Probability	        					|   logit value  |
-|:---------------------:|:---------------------------------------------:|:--------|
-| Yield |   1.0  |  0.05566255 |
-| Keep left |   0.0  | 0.03439559 |
-| Ahead only |   0.0  | 0.03429727 |
-| Priority road |   0.0  | 0.03346836 |
-| Speed limit (30km/h) |   0.0  | 0.03340819 |
+| Class Name         		|     softMax Probability	        					|
+|:---------------------:|:---------------------------------------------:|
+| Yield |   ~1.0  |
+| Turn left ahead |   ~0.0  |
+| No entry |   ~0.0  |
+| Ahead only |   ~0.0  |
+| Priority road |   ~0.0  |
 
 For class *workOnRoad*
 
-| Class Name         		|     softMax Probability	        					|   logit value  |
-|:---------------------:|:---------------------------------------------:|:--------|
-| Road work |   1.0  |  0.0402409 |
-| Traffic signals |   0.0  | 0.0379555 |
-| Bumpy road |   0.0  | 0.03606158 |
-| Keep right |   0.0  | 0.03564057 |
-| Stop |   0.0  | 0.03268247 |
+| Class Name         		|     softMax Probability	        					|
+|:---------------------:|:---------------------------------------------:|
+| Bumpy road |   0.9996457  |
+| Road work |   0.00034935208  |
+| Roundabout mandatory |   4.837888e-06  | 
+| Bicycles crossing |   ~0.0  | 
+| Stop |   ~0.0  | 
 
 For class *noentry*
 
-| Class Name         		|     softMax Probability	        					|   logit value  |
-|:---------------------:|:---------------------------------------------:|:--------|
-| No passing |   1.0  |  0.0531274 |
-| End of no passing |   0.0  | 0.0488193 |
-| Children crossing |   0.0  | 0.04091295 |
-| Slippery road |   0.0  | 0.03790422 |
-| Turn left ahead |   0.0  | 0.03738894 |
+| Class Name         		|     softMax Probability	        					|
+|:---------------------:|:---------------------------------------------:|
+| No entry |   0.99449867  |
+| No passing |   0.005076007  |
+| End of no passing |   0.00042538476  |
+| Priority road |   1.7922431e-13  |
+| Vehicles over 3.5 metric tons prohibited |   4.258632e-14  |
 
 For class *50SpeedLimit*
 
-| Class Name         		|     softMax Probability	        					|   logit value  |
-|:---------------------:|:---------------------------------------------:|:--------|
-| Speed limit (50km/h) |   1.0  |  0.04885767 |
-| Speed limit (30km/h) |   0.0  | 0.04864373 |
-| Speed limit (80km/h) |   0.0  | 0.04017843 |
-| Right-of-way at the next intersection |   0.0  | 0.03840325 |
-| Speed limit (100km/h) |   0.0  | 0.03729843 |
+| Class Name         		|     softMax Probability	        					|
+|:---------------------:|:---------------------------------------------:|
+| Speed limit (50km/h) |   ~1.0  |
+| Speed limit (80km/h) |   ~0.0  |
+| Speed limit (60km/h) |   ~0.0  |
+| Speed limit (30km/h) |   ~0.0  |
+| Keep right |  ~0.0  |
 
-### Dataset and Repository
-
-2. Clone the project, which contains the Ipython notebook and the writeup template.
-```sh
-git clone https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project
-cd CarND-Traffic-Sign-Classifier-Project
-jupyter notebook Traffic_Sign_Classifier.ipynb
-```
 
 ### Possible Improvements
 We can definitely get better results if we find a way to augment the dataset with more data. That can be done for some of the signs by simply taking a mirror image(but be careful with the new labels)
