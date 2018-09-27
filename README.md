@@ -113,18 +113,14 @@ After mamnual data shaping I fed the images inside the trained neural network to
 For the class  straightOnly  the top classes with corresponding softmax probabilities 
 
 
-| Class Name         		|     softMax Probability	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Ahead only |   1.0  |
-| Speed limit (20km/h) |   0.0  |
-| Speed limit (20km/h) |   0.0  |
-| Speed limit (50km/h) |   0.0  |
-| Speed limit (60km/h) |   0.0  |
+| Class Name         		|     softMax Probability	        					|   logit value  |
+|:---------------------:|:---------------------------------------------:|:--------|
+| Ahead only |   1.0  |  0.06681505 |
+| Yield |   0.0  | 0.04762857 |
+| Go straight or right |   0.0  | 0.04726604 |
+| Turn right ahead |   0.0  | 0.04079577 |
+| Priority road |   0.0  | 0.03750502 |
 
-Class Name :  Speed limit (20km/h), softMax Probability :  0.0
-Class Name :  Speed limit (30km/h), softMax Probability :  0.0
-Class Name :  Speed limit (50km/h), softMax Probability :  0.0
-Class Name :  Speed limit (60km/h), softMax Probability :  0.0
 
 
 ### Dataset and Repository
