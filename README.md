@@ -110,22 +110,68 @@ On the image after transforming it the grayscale but got bad results in terms of
 
 After mamnual data shaping I fed the images inside the trained neural network to get 4 out of 6 images predicted correctly. The predicted classes are
 
-For the class  straightOnly  the top classes with corresponding softmax probabilities 
+For the class  *straightOnly*  the top classes with corresponding softmax probabilities 
 
 
-| Class Name         		|     softMax Probability	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Ahead only |   1.0  |
-| Speed limit (20km/h) |   0.0  |
-| Speed limit (20km/h) |   0.0  |
-| Speed limit (50km/h) |   0.0  |
-| Speed limit (60km/h) |   0.0  |
+| Class Name         		|     softMax Probability	        					|   logit value  |
+|:---------------------:|:---------------------------------------------:|:--------|
+| Ahead only |   1.0  |  0.06681505 |
+| Yield |   0.0  | 0.04762857 |
+| Go straight or right |   0.0  | 0.04726604 |
+| Turn right ahead |   0.0  | 0.04079577 |
+| Priority road |   0.0  | 0.03750502 |
 
-Class Name :  Speed limit (20km/h), softMax Probability :  0.0
-Class Name :  Speed limit (30km/h), softMax Probability :  0.0
-Class Name :  Speed limit (50km/h), softMax Probability :  0.0
-Class Name :  Speed limit (60km/h), softMax Probability :  0.0
 
+For class *stop*
+
+| Class Name         		|     softMax Probability	        					|   logit value  |
+|:---------------------:|:---------------------------------------------:|:--------|
+| Keep right |   1.0  |  0.04347756 |
+| Speed limit (30km/h) |   0.0  | 0.04167535 |
+| Road work |   0.0  | 0.04124022 |
+| Speed limit (80km/h) |   0.0  | 0.03936648 |
+| Speed limit (50km/h) |   0.0  | 0.03915376 |
+
+
+For class *yield*
+
+| Class Name         		|     softMax Probability	        					|   logit value  |
+|:---------------------:|:---------------------------------------------:|:--------|
+| Yield |   1.0  |  0.05566255 |
+| Keep left |   0.0  | 0.03439559 |
+| Ahead only |   0.0  | 0.03429727 |
+| Priority road |   0.0  | 0.03346836 |
+| Speed limit (30km/h) |   0.0  | 0.03340819 |
+
+For class *workOnRoad*
+
+| Class Name         		|     softMax Probability	        					|   logit value  |
+|:---------------------:|:---------------------------------------------:|:--------|
+| Road work |   1.0  |  0.0402409 |
+| Traffic signals |   0.0  | 0.0379555 |
+| Bumpy road |   0.0  | 0.03606158 |
+| Keep right |   0.0  | 0.03564057 |
+| Stop |   0.0  | 0.03268247 |
+
+For class *noentry*
+
+| Class Name         		|     softMax Probability	        					|   logit value  |
+|:---------------------:|:---------------------------------------------:|:--------|
+| No passing |   1.0  |  0.0531274 |
+| End of no passing |   0.0  | 0.0488193 |
+| Children crossing |   0.0  | 0.04091295 |
+| Slippery road |   0.0  | 0.03790422 |
+| Turn left ahead |   0.0  | 0.03738894 |
+
+For class *50SpeedLimit*
+
+| Class Name         		|     softMax Probability	        					|   logit value  |
+|:---------------------:|:---------------------------------------------:|:--------|
+| Speed limit (50km/h) |   1.0  |  0.04885767 |
+| Speed limit (30km/h) |   0.0  | 0.04864373 |
+| Speed limit (80km/h) |   0.0  | 0.04017843 |
+| Right-of-way at the next intersection |   0.0  | 0.03840325 |
+| Speed limit (100km/h) |   0.0  | 0.03729843 |
 
 ### Dataset and Repository
 
